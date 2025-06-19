@@ -8,6 +8,7 @@
   ],
   "exclude": ["./p5/code/p5.js", "./p5/code/p5js-svg.js"],
   "compilerOptions": {
-    "checkJs": true
+    "checkJs": true,
+    "target": "es2022"
   }
 }

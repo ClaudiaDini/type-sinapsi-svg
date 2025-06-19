@@ -10,6 +10,8 @@ declare global {
     elt: SVGElement;
     attribute(name: string, value: any): void;
     query(selector: string): SVGImage[];
+    width: number,
+    height:number
   };
 
   function loadSVG(path: string, callback?: (svg: SVGImage) => void): SVGImage;

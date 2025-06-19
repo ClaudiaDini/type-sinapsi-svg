@@ -7,7 +7,7 @@
 //let A_4;
 // let percentuale = 0.5;
 let gap = 20;
-let c = "blue"
+let c = "blue";
 
 /** @type {Object.<string, SVGImage[]>} */
 let lettere = {};
@@ -31,8 +31,16 @@ function preload() {
       loadSVGImage("S/S-4.svg"),
       loadSVGImage("S/S-5.svg"),
     ],
-    I: [loadSVGImage("I/I-1.svg"), loadSVGImage("I/I-2.svg"), loadSVGImage("I/I-3.svg")],
-    N: [loadSVGImage("N/N-1.svg"), loadSVGImage("N/N-2.svg"), loadSVGImage("N/N-3.svg")],
+    I: [
+      loadSVGImage("I/I-1.svg"),
+      loadSVGImage("I/I-2.svg"),
+      loadSVGImage("I/I-3.svg"),
+    ],
+    N: [
+      loadSVGImage("N/N-1.svg"),
+      loadSVGImage("N/N-2.svg"),
+      loadSVGImage("N/N-3.svg"),
+    ],
     A: [
       loadSVGImage("A/A-1.svg"),
       loadSVGImage("A/A-2.svg"),
@@ -65,7 +73,7 @@ function setup() {
 }
 
 function draw() {
-  clear()
+  clear();
   background(0);
   disegnaParola(parola);
 }
@@ -99,8 +107,7 @@ function disegnaParola(parola) {
   let percentuale1 = noise(frameCount * 0.01);
   let percentuale2 = 1 - percentuale1;
 
-  translate(width/2, height/2)
-  scale(0.3)
+  translate(width / 2, height / 2);
 
   // Variante mouse
   // let percentuale1 = map(mouseX, 0, width, 1, 0, true);
@@ -113,9 +120,10 @@ function disegnaParola(parola) {
 
   let height_totale = parola[0][0].height;
 
-  let x = ( - width_totale) / 2;
-  let y = ( - height_totale) / 2;
+  let x = -width_totale / 2;
+  let y = -height_totale / 2;
 
+  scale(width / (width_totale * 1.5));
   // rect(x, y, len_totale, height_totale);
 
   push();
@@ -174,8 +182,8 @@ function lettera(x, y, coppia, percentuale) {
   beginClip();
   rect(base_x, base_y, mask_sx_w, mask_h);
   endClip();
-  removeStyles(img_sx)
-  fillSVG(img_sx, c)
+  removeStyles(img_sx);
+  fillSVG(img_sx, c);
   image(img_sx, 0, 0);
   pop();
 
@@ -183,8 +191,8 @@ function lettera(x, y, coppia, percentuale) {
   beginClip();
   rect(base_x + mask_sx_w, base_y, mask_w - mask_sx_w, mask_h);
   endClip();
-  removeStyles(img_dx)
-  fillSVG(img_dx, c)
+  removeStyles(img_dx);
+  fillSVG(img_dx, c);
   image(img_dx, 0, 0);
   pop();
 

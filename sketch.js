@@ -1,7 +1,7 @@
 /** @typedef {[SVGImage, SVGImage]} Lettera */
 /** @typedef {Lettera[]} Parola */
 
-let gap = 20;
+let gap = 100;
 let c = "white";
 
 /** @type {Object.<string, SVGImage[]>} */
